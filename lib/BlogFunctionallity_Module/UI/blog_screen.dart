@@ -13,7 +13,7 @@ class BlogScreen extends GetView<BlogController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Create Blog'),
+        title: const Text('Create Blog'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -22,23 +22,23 @@ class BlogScreen extends GetView<BlogController> {
             // Title TextField
             TextField(
               controller: controller.titleController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Title',
                 border: OutlineInputBorder(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Content TextField
             TextField(
               controller: controller.contentController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Content',
                 border: OutlineInputBorder(),
               ),
               maxLines: 5,
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Publish Blog Button
             ElevatedButton(
@@ -86,7 +86,7 @@ class BlogScreen extends GetView<BlogController> {
                 // Navigate back
                 Get.back();
               },
-              child: Text('Publish Blog'),
+              child: const Text('Publish Blog'),
             ),
           ],
         ),

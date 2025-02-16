@@ -30,6 +30,16 @@ class HomeController extends GetxController {
           'likes': currentLikes + 1,
           'likedBy': FieldValue.arrayUnion([userId]),
         });
+
+
+        int blogIndex = blogs.indexWhere((blog) => blog.blogId == blogId);
+        if (blogIndex != -1) {
+          BlogModel updatedBlog = blogs[blogIndex].copyWith(
+            likes: currentLikes + 1,
+            likedBy: List.from(likedBy)..add(userId),
+          );
+          blogs[blogIndex] = updatedBlog;
+        }
       }
     }
   }

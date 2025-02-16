@@ -1,6 +1,5 @@
 import 'package:blogsphere/BlogFunctionallity_Module/Binding/blog_binder.dart';
 import 'package:blogsphere/BlogFunctionallity_Module/UI/blog_screen.dart';
-import 'package:blogsphere/Blogview_Module/UI/BlogDetail.dart';
 import 'package:blogsphere/Login_Module/Binder/login_binder.dart';
 import 'package:blogsphere/Login_Module/UI/login_screen.dart';
 import 'package:blogsphere/Profile_Module/Binding/profile_binder.dart';
