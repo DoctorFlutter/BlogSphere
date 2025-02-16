@@ -19,7 +19,7 @@ class HomeController extends GetxController {
     });
   }
 
-  void likeBlog(String blogId, String userId) async {
+   void likeBlog(String blogId, String userId) async {
     var blogRef = firestore.collection('blogs').doc(blogId);
     var blogDoc = await blogRef.get();
     if (blogDoc.exists) {
@@ -30,16 +30,6 @@ class HomeController extends GetxController {
           'likes': currentLikes + 1,
           'likedBy': FieldValue.arrayUnion([userId]),
         });
-
-
-        int blogIndex = blogs.indexWhere((blog) => blog.blogId == blogId);
-        if (blogIndex != -1) {
-          BlogModel updatedBlog = blogs[blogIndex].copyWith(
-            likes: currentLikes + 1,
-            likedBy: List.from(likedBy)..add(userId),
-          );
-          blogs[blogIndex] = updatedBlog;
-        }
       }
     }
   }
